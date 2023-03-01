@@ -1,8 +1,13 @@
 ﻿using System.Threading;
+using CSharp_Console_Apps.HelloWorld;
+
 class Program
 {
 
     string[] programs = { "HelloWorld", "Calculator", "TemperatureConverter", "InterestCalculator", "GradeCalculator", "ArraySumCalculator" };
+
+    // #The Different Class Objects
+    HelloWorld hw = new HelloWorld();
 
     static void Main(string[] args)
     {
@@ -11,6 +16,9 @@ class Program
 
     private static void MainMenu()
     {
+        // #The Different Class Objects
+        HelloWorld hw = new HelloWorld();
+
         IntroductionPart();
 
         bool continueLoop = true;
@@ -23,14 +31,21 @@ class Program
             if (choice < 1 || choice > 6)
             {
                 Console.WriteLine("\nPlease pick a number from the list above.");
-                Thread.Sleep(1500);
-                Console.Clear();
+                ResetScreen(1500);
                 MainMenu();
                 return;
             }
             else if (choice == 1){
                 Console.WriteLine("\nHello!");
                 continueLoop = false;
+            }
+
+            switch (choice)
+            {
+                case 1:
+                    ResetScreen(1200);
+                    hw.Main();
+                    break;
             }
         }
 
@@ -39,6 +54,12 @@ class Program
 
 
 
+    }
+
+    private static void ResetScreen(int seconds)
+    {
+        Thread.Sleep(seconds);
+        Console.Clear();
     }
 
     private static void IntroductionPart()
