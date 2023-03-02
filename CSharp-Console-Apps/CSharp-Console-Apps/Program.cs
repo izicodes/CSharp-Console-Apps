@@ -4,9 +4,6 @@ using CSharp_Console_Apps.Calculator;
 
 class Program
 {
-    readonly string[] programs = { "HelloWorld", "Calculator", "TemperatureConverter", "InterestCalculator", "GradeCalculator", "ArraySumCalculator" };
-    
-
     static void Main(string[] args)
     {
         MainMenu();
@@ -49,11 +46,6 @@ class Program
                     break;
             }
         }
-
-
-
-
-
 
     }
 
