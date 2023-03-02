@@ -1,13 +1,12 @@
 ﻿using System.Threading;
 using CSharp_Console_Apps.HelloWorld;
+using CSharp_Console_Apps.Calculator;
 
 class Program
 {
 
     string[] programs = { "HelloWorld", "Calculator", "TemperatureConverter", "InterestCalculator", "GradeCalculator", "ArraySumCalculator" };
-
-    // #The Different Class Objects
-    HelloWorld hw = new HelloWorld();
+    
 
     static void Main(string[] args)
     {
@@ -18,6 +17,7 @@ class Program
     {
         // #The Different Class Objects
         HelloWorld hw = new HelloWorld();
+        Calculator cal = new Calculator();
 
         IntroductionPart();
 
@@ -35,16 +35,18 @@ class Program
                 MainMenu();
                 return;
             }
-            else if (choice == 1){
-                Console.WriteLine("\nHello!");
-                continueLoop = false;
-            }
 
             switch (choice)
             {
                 case 1:
                     ResetScreen(1200);
+                    continueLoop = false;
                     hw.Main();
+                    break;
+                case 2:
+                    ResetScreen(1200);
+                    continueLoop = false;
+                    cal.Main();
                     break;
             }
         }
