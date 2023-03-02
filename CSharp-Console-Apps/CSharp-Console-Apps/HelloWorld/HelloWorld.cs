@@ -10,7 +10,14 @@ namespace CSharp_Console_Apps.HelloWorld
     {
         public void Main()
         {
+
+            Console.WriteLine(">> | Hello World | <<\n");
+
             Console.WriteLine("Hello World");
+
+
+            // Start the options
+            Program.EndOfProgram();
         }
     }
 }

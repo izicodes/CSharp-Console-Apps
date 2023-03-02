@@ -4,8 +4,7 @@ using CSharp_Console_Apps.Calculator;
 
 class Program
 {
-
-    string[] programs = { "HelloWorld", "Calculator", "TemperatureConverter", "InterestCalculator", "GradeCalculator", "ArraySumCalculator" };
+    readonly string[] programs = { "HelloWorld", "Calculator", "TemperatureConverter", "InterestCalculator", "GradeCalculator", "ArraySumCalculator" };
     
 
     static void Main(string[] args)
@@ -13,7 +12,7 @@ class Program
         MainMenu();
     }
 
-    private static void MainMenu()
+    public static void MainMenu()
     {
         // #The Different Class Objects
         HelloWorld hw = new HelloWorld();
@@ -58,13 +57,14 @@ class Program
 
     }
 
-    private static void ResetScreen(int seconds)
+    public static void ResetScreen(int seconds)
     {
         Thread.Sleep(seconds);
         Console.Clear();
     }
 
-    private static void IntroductionPart()
+    // # Intro to the main menu
+    public static void IntroductionPart()
     {
         Console.WriteLine(">> | MAIN MENU | <<\n");
         Console.WriteLine("Hello and welcome to XiaCodes' C# Console Applications Collection!");
@@ -75,6 +75,27 @@ class Program
         {
             int num = i + 1;
             Console.WriteLine($"[ {num} ] {programs[i]}\n");
+        }
+    }
+
+    // # After each program, show the options
+    public static void EndOfProgram()
+    {
+        Console.WriteLine("\n ------------------- \n");
+        Console.WriteLine("\n[ 1 ] - Return to main menu\n");
+        Console.WriteLine("[ 2 ] - Quit program entirely\n");
+
+        string choice = Console.ReadLine();
+        switch (choice)
+        {
+            case "1":
+                ResetScreen(1200);
+                MainMenu();
+                break;
+            case "2":
+                ResetScreen(1200);
+                Environment.Exit(0);
+                break;
         }
     }
 }
