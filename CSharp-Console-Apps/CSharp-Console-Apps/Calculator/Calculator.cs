@@ -42,18 +42,35 @@ namespace CSharp_Console_Apps.Calculator
             Console.WriteLine("[ 1 ] Addition\n");
             Console.WriteLine("How many numbers do you want to add together?");
             int numberLength = Convert.ToInt32(Console.ReadLine());
-            List<int> numbersList = new List<int>();
 
             // Loop around the number needed
             Console.WriteLine("\n ------------------- \n");
-            for (int i = 0; i < numberLength; i++)
+            double score = 0;
+            string equation = "";
+
+            for (int i = 1; i <= numberLength; i++)
             {
-                int num = i + 1;
-                Console.WriteLine($"Input no.{num} number needed:");
-                numbersList.Add(Convert.ToInt32(Console.ReadLine()));
+                Console.WriteLine($"Input no.{i} number needed:");
+                double number = double.Parse(Console.ReadLine());
                 Console.WriteLine("\n");
+                score += number;
+
+                if (i == numberLength)
+                {
+                    equation += number + " = ";
+                }
+                else
+                {
+                    equation += number + " + ";
+                }
             }
-            Console.WriteLine("\nThank you.");
+
+            // Reveal the answer
+            Console.WriteLine(" ------------------- \n");
+            equation += score;
+
+            Console.WriteLine("Answer: " + equation);
+
         }
     }
 }
