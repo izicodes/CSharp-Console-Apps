@@ -113,5 +113,42 @@ namespace CSharp_Console_Apps.Calculator
             Console.WriteLine("Answer: " + equation);
 
         }
+
+        public void multiply()
+        {
+            Console.WriteLine(">> | Calculator | <<\n");
+            Console.WriteLine("[ 3 ] Multiplication\n");
+            Console.WriteLine("How many numbers do you want to subtract from each other?");
+            int numberLength = Convert.ToInt32(Console.ReadLine());
+
+            // Loop around the number needed
+            Console.WriteLine("\n ------------------- \n");
+            double score = 0;
+            string equation = "";
+
+            for (int i = 1; i <= numberLength; i++)
+            {
+                Console.WriteLine($"Input no.{i} number needed:");
+                double number = double.Parse(Console.ReadLine());
+                Console.WriteLine("\n");
+                score *= number;
+
+                if (i == numberLength)
+                {
+                    equation += number + " = ";
+                }
+                else
+                {
+                    equation += number + " x ";
+                }
+            }
+
+            // Reveal the answer
+            Console.WriteLine(" ------------------- \n");
+            equation += score;
+
+            Console.WriteLine("Answer: " + equation);
+
+        }
     }
 }
