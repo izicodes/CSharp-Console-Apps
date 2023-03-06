@@ -32,6 +32,10 @@ namespace CSharp_Console_Apps.Calculator
             {
                 Program.ResetScreen(1200);
                 Addition();
+            } else if (choice == 2)
+            {
+                Program.ResetScreen(1200);
+                Subtraction();
             }
 
         }
@@ -62,6 +66,43 @@ namespace CSharp_Console_Apps.Calculator
                 else
                 {
                     equation += number + " + ";
+                }
+            }
+
+            // Reveal the answer
+            Console.WriteLine(" ------------------- \n");
+            equation += score;
+
+            Console.WriteLine("Answer: " + equation);
+
+        }
+
+        public void Subtraction()
+        {
+            Console.WriteLine(">> | Calculator | <<\n");
+            Console.WriteLine("[ 2 ] Subtraction\n");
+            Console.WriteLine("How many numbers do you want to subtract from each other?");
+            int numberLength = Convert.ToInt32(Console.ReadLine());
+
+            // Loop around the number needed
+            Console.WriteLine("\n ------------------- \n");
+            double score = 0;
+            string equation = "";
+
+            for (int i = 1; i <= numberLength; i++)
+            {
+                Console.WriteLine($"Input no.{i} number needed:");
+                double number = double.Parse(Console.ReadLine());
+                Console.WriteLine("\n");
+                score -= number;
+
+                if (i == numberLength)
+                {
+                    equation += number + " = ";
+                }
+                else
+                {
+                    equation += number + " - ";
                 }
             }
 
