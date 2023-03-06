@@ -32,10 +32,21 @@ namespace CSharp_Console_Apps.Calculator
             {
                 Program.ResetScreen(1200);
                 Addition();
-            } else if (choice == 2)
+            } 
+            else if (choice == 2)
             {
                 Program.ResetScreen(1200);
                 Subtraction();
+            }
+            else if (choice == 3)
+            {
+                Program.ResetScreen(1200);
+                Multiply();
+            }
+            else if (choice == 4)
+            {
+                Program.ResetScreen(1200);
+                Division();
             }
 
         }
@@ -114,16 +125,16 @@ namespace CSharp_Console_Apps.Calculator
 
         }
 
-        public void multiply()
+        public void Multiply()
         {
             Console.WriteLine(">> | Calculator | <<\n");
             Console.WriteLine("[ 3 ] Multiplication\n");
-            Console.WriteLine("How many numbers do you want to subtract from each other?");
+            Console.WriteLine("How many numbers do you want to multiply together?");
             int numberLength = Convert.ToInt32(Console.ReadLine());
 
             // Loop around the number needed
             Console.WriteLine("\n ------------------- \n");
-            double score = 0;
+            double score = 1;
             string equation = "";
 
             for (int i = 1; i <= numberLength; i++)
@@ -139,7 +150,44 @@ namespace CSharp_Console_Apps.Calculator
                 }
                 else
                 {
-                    equation += number + " x ";
+                    equation += number + " × ";
+                }
+            }
+
+            // Reveal the answer
+            Console.WriteLine(" ------------------- \n");
+            equation += score;
+
+            Console.WriteLine("Answer: " + equation);
+
+        }
+
+        public void Division()
+        {
+            Console.WriteLine(">> | Calculator | <<\n");
+            Console.WriteLine("[ 4 ] Division\n");
+            Console.WriteLine("How many numbers do you want to be divided from each other?");
+            int numberLength = Convert.ToInt32(Console.ReadLine());
+
+            // Loop around the number needed
+            Console.WriteLine("\n ------------------- \n");
+            double score = 1;
+            string equation = "";
+
+            for (int i = 1; i <= numberLength; i++)
+            {
+                Console.WriteLine($"Input no.{i} number needed:");
+                double number = double.Parse(Console.ReadLine());
+                Console.WriteLine("\n");
+                score /= number;
+
+                if (i == numberLength)
+                {
+                    equation += number + " = ";
+                }
+                else
+                {
+                    equation += number + " ÷ ";
                 }
             }
 
