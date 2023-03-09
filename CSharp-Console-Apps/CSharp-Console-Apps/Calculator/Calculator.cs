@@ -17,7 +17,7 @@ namespace CSharp_Console_Apps.Calculator
             
 
             // The options
-            string[] operationsChoices = { "Addition", "Subtraction", "Multiplication", "Division" };
+            string[] operationsChoices = { "Addition", "Subtraction", "Multiplication", "Division", "Back to main menu"};
             for (int i = 0; i < operationsChoices.Length; i++)
             {
                 int num = i + 1;
@@ -25,28 +25,43 @@ namespace CSharp_Console_Apps.Calculator
             }
             Console.WriteLine("\nPick a basic arithmetic operation:\n");
             int choice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\n\nLoading. . .");
             
 
             if (choice == 1)
             {
+                Console.WriteLine("\n\nLoading. . .");
                 Program.ResetScreen(1200);
                 Addition();
             } 
             else if (choice == 2)
             {
+                Console.WriteLine("\n\nLoading. . .");
                 Program.ResetScreen(1200);
                 Subtraction();
             }
             else if (choice == 3)
             {
+                Console.WriteLine("\n\nLoading. . .");
                 Program.ResetScreen(1200);
                 Multiply();
             }
             else if (choice == 4)
             {
+                Console.WriteLine("\n\nLoading. . .");
                 Program.ResetScreen(1200);
                 Division();
+            }
+            else if (choice == 5)
+            {
+                Console.WriteLine("\nLoading. . .");
+                Program.ResetScreen(1200);
+                Program.MainMenu();
+            }
+            else
+            {
+                Console.WriteLine("\nSorry, but you didn't pick an option from the list.\nTry again.");
+                Program.ResetScreen(1400);
+                Main();
             }
 
         }
