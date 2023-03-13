@@ -37,6 +37,7 @@ namespace CSharp_Console_Apps.TemperatureConverter
             {
                 Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
+                CToK();
             }
             else if (choice == 3)
             {
@@ -78,15 +79,64 @@ namespace CSharp_Console_Apps.TemperatureConverter
             Console.WriteLine(">> | Temperature Converter | <<\n");
             Console.WriteLine("[ 1 ] Celsius to Fahrenheit\n");
             Console.WriteLine("Enter the temperature in degrees Celsius (°C):");
-            int temp = Convert.ToInt32(Console.ReadLine());
+            double temp = Convert.ToInt32(Console.ReadLine());
 
-            int convertedNumber = (int)(temp * 1.8);
+            double convertedNumber = (temp * 1.8);
             convertedNumber += 32;
+            convertedNumber = Math.Round(convertedNumber, 2);
 
             Console.WriteLine(" ------------------- \n");
             string answer = temp + "°C = " + convertedNumber + "°F";
             Console.WriteLine(answer);
+            Return();
 
+        }
+
+        public void CToK()
+        {
+            Console.WriteLine(">> | Temperature Converter | <<\n");
+            Console.WriteLine("[ 2 ] Celsius to Kelvin\n");
+            Console.WriteLine("Enter the temperature in degrees Celsius (°C):");
+            double temp = Convert.ToDouble(Console.ReadLine());
+
+            double convertedNumber = (temp + 273.15);
+            convertedNumber += 32;
+            convertedNumber = Math.Round(convertedNumber, 2);
+
+            Console.WriteLine(" ------------------- \n");
+            string answer = temp + "°C = " + convertedNumber + "K";
+            Console.WriteLine(answer);
+            Return();
+
+        }
+
+
+
+
+        //## Method that gives a small menu on what to do next
+        public void Return()
+        {
+            Console.WriteLine("\n ------------------- \n\n");
+            Console.WriteLine("[ 1 ] - Return to Temperature Converter's main menu\n");
+            Console.WriteLine("[ 2 ] - Return to main menu\n");
+            Console.WriteLine("[ 3 ] - Quit program entirely\n");
+
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    Program.ResetScreen(1200);
+                    Main();
+                    break;
+                case "2":
+                    Program.ResetScreen(1200);
+                    Program.MainMenu();
+                    break;
+                case "3":
+                    Program.ResetScreen(1200);
+                    Environment.Exit(0);
+                    break;
+            }
         }
     }
 }
