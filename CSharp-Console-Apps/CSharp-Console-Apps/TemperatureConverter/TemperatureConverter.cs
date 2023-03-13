@@ -55,11 +55,13 @@ namespace CSharp_Console_Apps.TemperatureConverter
             {
                 Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
+                KToC();
             }
             else if (choice == 6)
             {
                 Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
+                KToF();
             }
             else if (choice == 7)
             {
@@ -101,8 +103,7 @@ namespace CSharp_Console_Apps.TemperatureConverter
             Console.WriteLine("Enter the temperature in Degrees Celsius (°C):");
             double temp = Convert.ToDouble(Console.ReadLine());
 
-            double convertedNumber = (temp + 273.15);
-            convertedNumber += 32;
+            double convertedNumber = temp + 273.15;
             convertedNumber = Math.Round(convertedNumber, 2);
 
             Console.WriteLine(" ------------------- \n");
@@ -149,6 +150,41 @@ namespace CSharp_Console_Apps.TemperatureConverter
 
         }
 
+        public void KToC()
+        {
+            Console.WriteLine(">> | Temperature Converter | <<\n");
+            Console.WriteLine("[ 5 ] Kelvin to Celsius\n");
+            Console.WriteLine("Enter the temperature in Kelvin (K):");
+            double temp = Convert.ToInt32(Console.ReadLine());
+
+            double convertedNumber = temp - 273.15;
+            convertedNumber = Math.Round(convertedNumber, 2);
+
+            Console.WriteLine(" ------------------- \n");
+            string answer = temp + "K = " + convertedNumber + "°C";
+            Console.WriteLine(answer);
+            Return();
+
+        }
+
+        public void KToF()
+        {
+            Console.WriteLine(">> | Temperature Converter | <<\n");
+            Console.WriteLine("[ 4 ] Fahrenheit to Kelvin\n");
+            Console.WriteLine("Enter the temperature in Fahrenheit (°F):");
+            double temp = Convert.ToInt32(Console.ReadLine());
+
+            double convertedNumber = temp - 273.15;
+            convertedNumber = convertedNumber * 1.8;
+            convertedNumber += 32;
+            convertedNumber = Math.Round(convertedNumber, 2);
+
+            Console.WriteLine(" ------------------- \n");
+            string answer = temp + "K = " + convertedNumber + "°F";
+            Console.WriteLine(answer);
+            Return();
+
+        }
 
         //## Method that gives a small menu on what to do next
         public void Return()
