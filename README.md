@@ -35,17 +35,17 @@
       <tr>
         <td>HelloWorld</td>
         <td>A basic &quot;Hello World&quot; program to ensure the development environment is set up correctly.</td>
-        <td align="center"><a href="https://github.com/">Link</a></td>
+        <td align="center"><a href="https://github.com/xiacodes/CSharp-Console-Apps/tree/main/CSharp-Console-Apps/CSharp-Console-Apps/HelloWorld">Link</a></td>
       </tr>
       <tr>
         <td>Calculator</td>
         <td>A simple calculator that performs addition, subtraction, multiplication, and division.</td>
-        <td align="center"><a href="https://github.com/">Link</a></td>
+        <td align="center"><a href="https://github.com/xiacodes/CSharp-Console-Apps/tree/main/CSharp-Console-Apps/CSharp-Console-Apps/Calculator">Link</a></td>
       </tr>
       <tr>
         <td>TemperatureConverter</td>
         <td>A program that converts a temperature in Fahrenheit to Celsius.</td>
-        <td align="center"><a href="https://github.com/">Link</a></td>
+        <td align="center"><a href="https://github.com/xiacodes/CSharp-Console-Apps/tree/main/CSharp-Console-Apps/CSharp-Console-Apps/TemperatureConverter">Link</a></td>
       </tr>
       <tr>
         <td>InterestCalculator</td>
