@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_Console_Apps.Calculator
 {
-    internal class Calculator
+    public class Calculator
     {
         public void Main()
         {
@@ -23,31 +23,31 @@ namespace CSharp_Console_Apps.Calculator
                 int num = i + 1;
                 Console.WriteLine($"[ {num} ] {operationsChoices[i]}\n");
             }
-            Console.WriteLine("\nPick a basic arithmetic operation:\n");
+            Console.WriteLine("\nPick a basic arithmetic operation:");
             int choice = Convert.ToInt32(Console.ReadLine());
             
 
             if (choice == 1)
             {
-                Console.WriteLine("\n\nLoading. . .");
+                Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
                 Addition();
             } 
             else if (choice == 2)
             {
-                Console.WriteLine("\n\nLoading. . .");
+                Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
                 Subtraction();
             }
             else if (choice == 3)
             {
-                Console.WriteLine("\n\nLoading. . .");
+                Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
                 Multiply();
             }
             else if (choice == 4)
             {
-                Console.WriteLine("\n\nLoading. . .");
+                Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
                 Division();
             }
@@ -59,8 +59,8 @@ namespace CSharp_Console_Apps.Calculator
             }
             else
             {
-                Console.WriteLine("\nSorry, but you didn't pick an option from the list.\nTry again.");
-                Program.ResetScreen(1400);
+                Console.WriteLine("\nSorry, but you didn't pick an option from the list.\n\nTry again.");
+                Program.ResetScreen(1500);
                 Main();
             }
 
@@ -101,6 +101,7 @@ namespace CSharp_Console_Apps.Calculator
 
             Console.WriteLine("Answer: " + equation);
 
+            Return();
         }
 
         public void Subtraction()
@@ -137,6 +138,8 @@ namespace CSharp_Console_Apps.Calculator
             equation += score;
 
             Console.WriteLine("Answer: " + equation);
+
+            Return();
 
         }
 
@@ -212,6 +215,31 @@ namespace CSharp_Console_Apps.Calculator
 
             Console.WriteLine("Answer: " + equation);
 
+        }
+
+        public void Return()
+        {
+            Console.WriteLine("\n ------------------- \n\n");
+            Console.WriteLine("[ 1 ] - Return to Calculator's main menu\n");
+            Console.WriteLine("[ 2 ] - Return to main menu\n");
+            Console.WriteLine("[ 3 ] - Quit program entirely\n");
+
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    Program.ResetScreen(1200);
+                    Main();
+                    break;
+                case "2":
+                    Program.ResetScreen(1200);
+                    Program.MainMenu();
+                    break;
+                case "3":
+                    Program.ResetScreen(1200);
+                    Environment.Exit(0);
+                    break;
+            }
         }
     }
 }
