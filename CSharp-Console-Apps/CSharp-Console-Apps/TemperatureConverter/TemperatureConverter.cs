@@ -43,11 +43,13 @@ namespace CSharp_Console_Apps.TemperatureConverter
             {
                 Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
+                FToC();
             }
             else if (choice == 4)
             {
                 Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
+                FToK();
             }
             else if (choice == 5)
             {
@@ -78,10 +80,10 @@ namespace CSharp_Console_Apps.TemperatureConverter
         {
             Console.WriteLine(">> | Temperature Converter | <<\n");
             Console.WriteLine("[ 1 ] Celsius to Fahrenheit\n");
-            Console.WriteLine("Enter the temperature in degrees Celsius (°C):");
+            Console.WriteLine("Enter the temperature in Degrees Celsius (°C):");
             double temp = Convert.ToInt32(Console.ReadLine());
 
-            double convertedNumber = (temp * 1.8);
+            double convertedNumber = temp * 1.8;
             convertedNumber += 32;
             convertedNumber = Math.Round(convertedNumber, 2);
 
@@ -96,7 +98,7 @@ namespace CSharp_Console_Apps.TemperatureConverter
         {
             Console.WriteLine(">> | Temperature Converter | <<\n");
             Console.WriteLine("[ 2 ] Celsius to Kelvin\n");
-            Console.WriteLine("Enter the temperature in degrees Celsius (°C):");
+            Console.WriteLine("Enter the temperature in Degrees Celsius (°C):");
             double temp = Convert.ToDouble(Console.ReadLine());
 
             double convertedNumber = (temp + 273.15);
@@ -110,7 +112,42 @@ namespace CSharp_Console_Apps.TemperatureConverter
 
         }
 
+        public void FToC()
+        {
+            Console.WriteLine(">> | Temperature Converter | <<\n");
+            Console.WriteLine("[ 3 ] Fahrenheit to Celsius\n");
+            Console.WriteLine("Enter the temperature in Fahrenheit (°F):");
+            double temp = Convert.ToInt32(Console.ReadLine());
 
+            double convertedNumber = temp - 32;
+            convertedNumber = convertedNumber * 5/9;
+            convertedNumber = Math.Round(convertedNumber, 2);
+
+            Console.WriteLine(" ------------------- \n");
+            string answer = temp + "°F = " + convertedNumber + "°C";
+            Console.WriteLine(answer);
+            Return();
+
+        }
+
+        public void FToK()
+        {
+            Console.WriteLine(">> | Temperature Converter | <<\n");
+            Console.WriteLine("[ 4 ] Fahrenheit to Kelvin\n");
+            Console.WriteLine("Enter the temperature in Fahrenheit (°F):");
+            double temp = Convert.ToInt32(Console.ReadLine());
+
+            double convertedNumber = temp - 32;
+            convertedNumber = convertedNumber * 5 / 9;
+            convertedNumber += 273.15;
+            convertedNumber = Math.Round(convertedNumber, 2);
+
+            Console.WriteLine(" ------------------- \n");
+            string answer = temp + "°F = " + convertedNumber + "K";
+            Console.WriteLine(answer);
+            Return();
+
+        }
 
 
         //## Method that gives a small menu on what to do next
