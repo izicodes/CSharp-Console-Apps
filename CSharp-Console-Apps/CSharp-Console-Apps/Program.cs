@@ -2,6 +2,7 @@
 using CSharp_Console_Apps.HelloWorld;
 using CSharp_Console_Apps.Calculator;
 using CSharp_Console_Apps.TemperatureConverter;
+using CSharp_Console_Apps.InterestCalculator;
 
 class Program
 {
@@ -16,6 +17,7 @@ class Program
         HelloWorld hw = new HelloWorld();
         Calculator cal = new Calculator();
         TemperatureConverter temp = new TemperatureConverter();
+        InterestCalculator intcal = new InterestCalculator();
 
         IntroductionPart();
 
@@ -50,6 +52,11 @@ class Program
                     ResetScreen(1200);
                     continueLoop = false;
                     temp.Main();
+                    break;
+                case 4:
+                    ResetScreen(1200);
+                    continueLoop = false;
+                    //intcal.Main();
                     break;
             }
         }
