@@ -178,6 +178,8 @@ namespace CSharp_Console_Apps.Calculator
 
             Console.WriteLine("Answer: " + equation);
 
+            Return();
+
         }
 
         public void Division()
@@ -214,6 +216,8 @@ namespace CSharp_Console_Apps.Calculator
             equation += score;
 
             Console.WriteLine("Answer: " + equation);
+
+            Return();
 
         }
 
