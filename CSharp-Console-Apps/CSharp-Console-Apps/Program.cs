@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using CSharp_Console_Apps.HelloWorld;
 using CSharp_Console_Apps.Calculator;
+using CSharp_Console_Apps.TemperatureConverter;
 
 class Program
 {
@@ -14,6 +15,7 @@ class Program
         // #The Different Class Objects
         HelloWorld hw = new HelloWorld();
         Calculator cal = new Calculator();
+        TemperatureConverter temp = new TemperatureConverter();
 
         IntroductionPart();
 
@@ -44,6 +46,11 @@ class Program
                     continueLoop = false;
                     cal.Main();
                     break;
+                case 3:
+                    ResetScreen(1200);
+                    continueLoop = false;
+                    temp.Main();
+                    break;
             }
         }
 
@@ -62,7 +69,7 @@ class Program
         Console.WriteLine("Hello and welcome to XiaCodes' C# Console Applications Collection!");
         Console.WriteLine("Here are the available programs: \n");
 
-        string[] programs = { "HelloWorld", "Calculator", "TemperatureConverter", "InterestCalculator", "GradeCalculator", "ArraySumCalculator" };
+        string[] programs = { "Hello World", "Calculator", "Temperature Converter", "Interest Calculator", "Grade Calculator", "Array Sum Calculator", "Exit program" };
         for (int i = 0; i < programs.Length; i++)
         {
             int num = i + 1;
