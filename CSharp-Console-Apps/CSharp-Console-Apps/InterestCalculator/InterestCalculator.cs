@@ -51,6 +51,7 @@ namespace CSharp_Console_Apps.InterestCalculator
             {
                 Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
+                InterestRate();
             }
             else if (choice == 4)
             {
@@ -132,6 +133,28 @@ namespace CSharp_Console_Apps.InterestCalculator
             double answer = (100 * simpleInterest) / (interestRate * numberOfYears);
             answer = Math.Round(answer, 2);
             Console.WriteLine("The principal amount is: " + symbol + Convert.ToString(answer));
+            Return();
+        }
+
+        public void InterestRate()
+        {
+            // The heading
+            Console.WriteLine(">> | Interest Calculator | <<\n");
+            Console.WriteLine("[ 3 ] Find the Interest Rate\n");
+
+            // The other questions
+            Console.WriteLine("\nHow much was the Principal Amount?");
+            double principalAmount = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\nHow much was the Simple Interest?");
+            double simpleInterest = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\n\nWhat are the number of years the principal amount is invested or borrowed for?");
+            double numberOfYears = Convert.ToDouble(Console.ReadLine());
+
+            //Calculate the Principal Amount
+            Console.WriteLine(" ------------------- \n");
+            double answer = (100 * simpleInterest) / (principalAmount * numberOfYears);
+            answer = Math.Round(answer, 2);
+            Console.WriteLine("The interest rate is: " + Convert.ToString(answer) + "%");
             Return();
         }
 
