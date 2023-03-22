@@ -21,7 +21,7 @@ namespace CSharp_Console_Apps.TemperatureConverter
             for (int i = 0; i < conversionChoices.Length; i++)
             {
                 int num = i + 1;
-                Console.WriteLine($"[ {num} ] {conversionChoices[i]}\n");
+                Console.WriteLine($" [ {num} ] {conversionChoices[i]}\n");
             }
             Console.WriteLine("\nPick a conversion:");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -190,9 +190,9 @@ namespace CSharp_Console_Apps.TemperatureConverter
         public void Return()
         {
             Console.WriteLine("\n ------------------- \n\n");
-            Console.WriteLine("[ 1 ] - Return to Temperature Converter's main menu\n");
-            Console.WriteLine("[ 2 ] - Return to main menu\n");
-            Console.WriteLine("[ 3 ] - Quit program entirely\n");
+            Console.WriteLine(" [ 1 ] - Return to Temperature Converter's main menu\n");
+            Console.WriteLine(" [ 2 ] - Return to main menu\n");
+            Console.WriteLine(" [ 3 ] - Quit program entirely\n");
 
             string choice = Console.ReadLine();
             switch (choice)

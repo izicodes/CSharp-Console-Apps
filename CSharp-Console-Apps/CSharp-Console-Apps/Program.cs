@@ -56,7 +56,7 @@ class Program
                 case 4:
                     ResetScreen(1200);
                     continueLoop = false;
-                    //intcal.Main();
+                    intcal.Main();
                     break;
             }
         }
@@ -80,7 +80,7 @@ class Program
         for (int i = 0; i < programs.Length; i++)
         {
             int num = i + 1;
-            Console.WriteLine($"[ {num} ] {programs[i]}\n");
+            Console.WriteLine($" [ {num} ] {programs[i]}\n");
         }
     }
 
@@ -88,8 +88,8 @@ class Program
     public static void EndOfProgram()
     {
         Console.WriteLine("\n ------------------- \n");
-        Console.WriteLine("\n[ 1 ] - Return to main menu\n");
-        Console.WriteLine("[ 2 ] - Quit program entirely\n");
+        Console.WriteLine("\n [ 1 ] - Return to main menu\n");
+        Console.WriteLine(" [ 2 ] - Quit program entirely\n");
 
         string choice = Console.ReadLine();
         switch (choice)
