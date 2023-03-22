@@ -45,6 +45,7 @@ namespace CSharp_Console_Apps.InterestCalculator
             {
                 Console.WriteLine("\nLoading. . .");
                 Program.ResetScreen(1200);
+                PrincipalAmount();
             }
             else if (choice == 3)
             {
@@ -96,7 +97,41 @@ namespace CSharp_Console_Apps.InterestCalculator
             //Calculate the Simple Interest
             Console.WriteLine(" ------------------- \n");
             double answer = (principalAmount * interestRate * numberOfYears) / 100;
+            answer = Math.Round(answer, 2);
             Console.WriteLine("The simple interest is: " + symbol + Convert.ToString(answer));
+            Return();
+        }
+
+        public void PrincipalAmount()
+        {
+            // The heading
+            Console.WriteLine(">> | Interest Calculator | <<\n");
+            Console.WriteLine("[ 2 ] Find the Principal Amount\n");
+
+            // The currency question
+            string[] currencies = { "£", "$", "€", "¥", "₣", "₹" };
+            Console.WriteLine("Enter a valid currency symbol:");
+            string symbol = Console.ReadLine();
+            if (!currencies.Contains(symbol))
+            {
+                Console.WriteLine("\nEnter a valid currency, please!");
+                Program.ResetScreen(1200);
+                SimpleInterest();
+            }
+
+            // The other questions
+            Console.WriteLine("\nHow much was the Simple Interest?");
+            double simpleInterest = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\n\nWhat was the Interest Rate? (as a percentage, do not include the '%')");
+            double interestRate = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("\n\nWhat are the number of years the principal amount is invested or borrowed for?");
+            double numberOfYears = Convert.ToDouble(Console.ReadLine());
+
+            //Calculate the Principal Amount
+            Console.WriteLine(" ------------------- \n");
+            double answer = (100 * simpleInterest) / (interestRate * numberOfYears);
+            answer = Math.Round(answer, 2);
+            Console.WriteLine("The principal amount is: " + symbol + Convert.ToString(answer));
             Return();
         }
 
