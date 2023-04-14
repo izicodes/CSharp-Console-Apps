@@ -10,24 +10,29 @@ namespace CSharp_Console_Apps.GradeCalculator
     {
         public void Main()
         {
-            Console.WriteLine(" >> | Grade Calculator | <<\n");
+            Console.WriteLine(">> | Grade Calculator | <<\n");
 
             // Intro
-            Console.WriteLine(" Welcome to the Grade Calulator!\n ");
+            Console.WriteLine("Welcome to the Grade Calulator!\n ");
 
             // Saving the student's name
-            Console.WriteLine(" Before we start, please enter your name:\n");
+            Console.WriteLine("Before we start, please enter your name:\n");
             string studentName = Console.ReadLine();
 
-            Console.WriteLine(" Here are the calculator's options:\n");
+            Console.WriteLine("\n-------------\n");
+
+            Console.WriteLine("Here are the calculator's options:\n");
 
             // The options
-            string[] operationsChoices = { "Add one subject then see grade", "Add subjects then see overall grade", "Back to main menu" };
+            string[] operationsChoices = { "Add one subject then see the letter grade", "Add subjects then see overall letter grade", "Back to main menu" };
             for (int i = 0; i < operationsChoices.Length; i++)
             {
                 int num = i + 1;
-                Console.WriteLine($" [ {num} ] {operationsChoices[i]}\n");
+                Console.WriteLine($"[ {num} ] {operationsChoices[i]}\n");
             }
+
+            Console.WriteLine("-------------\n");
+
             Console.WriteLine("\nPick an option:");
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -71,7 +76,7 @@ namespace CSharp_Console_Apps.GradeCalculator
         public void SingleGrade(string studentName)
         {
             Console.WriteLine(">> | Grade Calculator | <<\n");
-            Console.WriteLine("[ 1 ] Add one subject then see grade\n");
+            Console.WriteLine("[ 1 ] Add one subject then see the letter grade\n");
             Console.WriteLine($"Hello {studentName}! You chose the option to see your final grade for a chosen subject!\n");
             Console.WriteLine("Please answer the following:\n");
 
@@ -81,10 +86,23 @@ namespace CSharp_Console_Apps.GradeCalculator
             Console.WriteLine("\nEnter the subject grade percentage, in 2 decimal places:");
             double percentage = Convert.ToDouble(Console.ReadLine());
 
+            // Start of the answers
+            Console.WriteLine("\n\n\n-------------");
+            Console.WriteLine($"Student Name: {studentName}\n");
+            Console.WriteLine($"Subject: {subject}\n");
+            Console.WriteLine($"Percentage Grade: {percentage}\n");
+
             // The calculation
-            if (percentage > 0)
+            if (percentage > 91 && percentage < 100)
             {
-                Console.WriteLine("Enter the subject's name:");
+                Console.WriteLine("Overall grade: A\n");
+
+                Console.WriteLine("*Notes: \nCongratulations! You've done excellent work and should be proud of your accomplishments.\n");
+                Return();
+            } 
+            else if (percentage > 81 && percentage < 90)
+            {
+
             }
 
 
@@ -95,7 +113,7 @@ namespace CSharp_Console_Apps.GradeCalculator
         public void Return()
         {
             Console.WriteLine("\n ------------------- \n\n");
-            Console.WriteLine(" [ 1 ] - Return to Interest Calculator's main menu\n");
+            Console.WriteLine(" [ 1 ] - Return to the Grade Calculator's main menu\n");
             Console.WriteLine(" [ 2 ] - Return to main menu\n");
             Console.WriteLine(" [ 3 ] - Quit program entirely\n");
 
