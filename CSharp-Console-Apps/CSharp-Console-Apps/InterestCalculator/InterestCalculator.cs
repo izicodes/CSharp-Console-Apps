@@ -31,7 +31,7 @@ namespace CSharp_Console_Apps.InterestCalculator
                 int num = i + 1;
                 Console.WriteLine($" [ {num} ] {operationsChoices[i]}\n");
             }
-            Console.WriteLine("\nPick a basic arithmetic operation:");
+            Console.WriteLine("\nPick an option:");
             int choice = Convert.ToInt32(Console.ReadLine());
 
 
@@ -170,14 +170,14 @@ namespace CSharp_Console_Apps.InterestCalculator
             double principalAmount = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("\nHow much was the Simple Interest?");
             double simpleInterest = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("\n\nWhat was the Interest Rate? (as a percentage, do not include the '%')");
+            Console.WriteLine("\nWhat was the Interest Rate? (as a percentage, do not include the '%')");
             double interestRate = Convert.ToDouble(Console.ReadLine());
 
             //Calculate the Principal Amount
             Console.WriteLine(" ------------------- \n");
             double answer = (100 * simpleInterest) / (principalAmount * interestRate);
             answer = Math.Round(answer, 2);
-            Console.WriteLine("The number of years is: " + Convert.ToString(answer) + "%");
+            Console.WriteLine("The number of years is: " + Convert.ToString(answer) );
             Return();
         }
 
