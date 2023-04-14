@@ -70,7 +70,24 @@ namespace CSharp_Console_Apps.GradeCalculator
 
         public void SingleGrade(string studentName)
         {
-            Console.WriteLine($"Hello {studentName}!");
+            Console.WriteLine(">> | Grade Calculator | <<\n");
+            Console.WriteLine("[ 1 ] Add one subject then see grade\n");
+            Console.WriteLine($"Hello {studentName}! You chose the option to see your final grade for a chosen subject!\n");
+            Console.WriteLine("Please answer the following:\n");
+
+            // The questions
+            Console.WriteLine("Enter the subject's name:");
+            string subject = Console.ReadLine();
+            Console.WriteLine("\nEnter the subject grade percentage, in 2 decimal places:");
+            double percentage = Convert.ToDouble(Console.ReadLine());
+
+            // The calculation
+            if (percentage > 0)
+            {
+                Console.WriteLine("Enter the subject's name:");
+            }
+
+
         }
 
 
