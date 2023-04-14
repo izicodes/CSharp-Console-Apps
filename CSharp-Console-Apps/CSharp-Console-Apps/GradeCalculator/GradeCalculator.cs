@@ -90,9 +90,9 @@ namespace CSharp_Console_Apps.GradeCalculator
             Console.WriteLine("\n\n\n-------------");
             Console.WriteLine($"Student Name: {studentName}\n");
             Console.WriteLine($"Subject: {subject}\n");
-            Console.WriteLine($"Percentage Grade: {percentage}\n");
+            Console.WriteLine($"Percentage Grade: {percentage}%\n");
 
-            // The calculation
+            #region The calculation
             if (percentage > 90 && percentage < 100)
             {
                 Console.WriteLine("Overall grade: A\n");
@@ -128,8 +128,87 @@ namespace CSharp_Console_Apps.GradeCalculator
                 Console.WriteLine("*Notes: \nUnfortunately, you have not met the requirements for passing the course. \nPlease speak with me to discuss your options moving forward.\n");
                 Return();
             }
+            #endregion
 
         }
+
+        public void MultipleGrades(string studentName)
+        {
+            Console.WriteLine(">> | Grade Calculator | <<\n");
+            Console.WriteLine("[ 2 ] Add subjects then see the overall letter grade\n");
+
+            Console.WriteLine($"Hello {studentName}! You chose the option to see your overall final grade for your chosen subjects!\n");
+
+            Console.WriteLine("How many subjects would you like to add?\n");
+            int subjectsNumber = Convert.ToInt32(Console.ReadLine());
+
+            // The questions
+            //Console.WriteLine("Enter the subject's name:");
+            //string subject = Console.ReadLine();
+            //Console.WriteLine("\nEnter the subject grade percentage, in 2 decimal places:");
+            //double percentage = Convert.ToDouble(Console.ReadLine());
+
+            // The while loop
+            Dictionary<string, double> subjects = new Dictionary<string, double>();
+            int isFinished = 0;
+
+            do
+            {
+                Console.WriteLine("Enter the subject's name:");
+                string subject = Console.ReadLine();
+                Console.WriteLine("\nEnter the subject grade percentage, in 2 decimal places:");
+                double percentage = Convert.ToDouble(Console.ReadLine());
+                subjects.Add(subject, percentage);
+                
+            } while (isFinished < subjectsNumber);
+            Console.WriteLine($"");
+
+            // Start of the answers
+            Console.WriteLine("\n\n\n-------------");
+            Console.WriteLine($"Student Name: {studentName}\n");
+            Console.WriteLine($"Subject: {subject}\n");
+            Console.WriteLine($"Percentage Grade: {percentage}\n");
+
+            #region The calculation
+            if (percentage > 90 && percentage < 100)
+            {
+                Console.WriteLine("Overall grade: A\n");
+
+                Console.WriteLine("*Notes: \nCongratulations! You've done excellent work and should be proud of your accomplishments.\n");
+                Return();
+            }
+            else if (percentage > 80 && percentage < 89)
+            {
+                Console.WriteLine("Overall grade: B\n");
+
+                Console.WriteLine("*Notes: \nGood job! You've demonstrated a solid understanding of the material and have shown consistent effort.\n");
+                Return();
+            }
+            else if (percentage > 70 && percentage < 79)
+            {
+                Console.WriteLine("Overall grade: C\n");
+
+                Console.WriteLine("*Notes: \nKeep up the good work! You've met the requirements for the course and have shown a satisfactory understanding of the material.\n");
+                Return();
+            }
+            else if (percentage > 60 && percentage < 69)
+            {
+                Console.WriteLine("Overall grade: D\n");
+
+                Console.WriteLine("*Notes: \nKYou've passed the course, but there is room for improvement. \nConsider seeking extra help or reviewing the material more thoroughly.\n");
+                Return();
+            }
+            else if (percentage <= 59)
+            {
+                Console.WriteLine("Overall grade: F\n");
+
+                Console.WriteLine("*Notes: \nUnfortunately, you have not met the requirements for passing the course. \nPlease speak with me to discuss your options moving forward.\n");
+                Return();
+            }
+            #endregion
+
+        }
+
 
 
         #region Other Methods
