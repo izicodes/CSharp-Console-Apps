@@ -3,6 +3,7 @@ using CSharp_Console_Apps.HelloWorld;
 using CSharp_Console_Apps.Calculator;
 using CSharp_Console_Apps.TemperatureConverter;
 using CSharp_Console_Apps.InterestCalculator;
+using CSharp_Console_Apps.GradeCalculator;
 
 class Program
 {
@@ -18,6 +19,7 @@ class Program
         Calculator cal = new Calculator();
         TemperatureConverter temp = new TemperatureConverter();
         InterestCalculator intcal = new InterestCalculator();
+        GradeCalculator gradecal = new GradeCalculator();
 
         IntroductionPart();
 
@@ -57,6 +59,11 @@ class Program
                     ResetScreen(1200);
                     continueLoop = false;
                     intcal.Main();
+                    break;
+                case 5:
+                    ResetScreen(1200);
+                    continueLoop = false;
+                    gradecal.Main();
                     break;
             }
         }
