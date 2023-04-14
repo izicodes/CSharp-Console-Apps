@@ -78,7 +78,7 @@ namespace CSharp_Console_Apps.GradeCalculator
             Console.WriteLine(">> | Grade Calculator | <<\n");
             Console.WriteLine("[ 1 ] Add one subject then see the letter grade\n");
             Console.WriteLine($"Hello {studentName}! You chose the option to see your final grade for a chosen subject!\n");
-            Console.WriteLine("Please answer the following:\n");
+            Console.WriteLine("Please answer the following.\n");
 
             // The questions
             Console.WriteLine("Enter the subject's name:");
@@ -93,18 +93,41 @@ namespace CSharp_Console_Apps.GradeCalculator
             Console.WriteLine($"Percentage Grade: {percentage}\n");
 
             // The calculation
-            if (percentage > 91 && percentage < 100)
+            if (percentage > 90 && percentage < 100)
             {
                 Console.WriteLine("Overall grade: A\n");
 
                 Console.WriteLine("*Notes: \nCongratulations! You've done excellent work and should be proud of your accomplishments.\n");
                 Return();
             } 
-            else if (percentage > 81 && percentage < 90)
+            else if (percentage > 80 && percentage < 89)
             {
+                Console.WriteLine("Overall grade: B\n");
 
+                Console.WriteLine("*Notes: \nGood job! You've demonstrated a solid understanding of the material and have shown consistent effort.\n");
+                Return();
             }
+            else if (percentage > 70 && percentage < 79)
+            {
+                Console.WriteLine("Overall grade: C\n");
 
+                Console.WriteLine("*Notes: \nKeep up the good work! You've met the requirements for the course and have shown a satisfactory understanding of the material.\n");
+                Return();
+            }
+            else if (percentage > 60 && percentage < 69)
+            {
+                Console.WriteLine("Overall grade: D\n");
+
+                Console.WriteLine("*Notes: \nKYou've passed the course, but there is room for improvement. \nConsider seeking extra help or reviewing the material more thoroughly.\n");
+                Return();
+            }
+            else if (percentage <= 59)
+            {
+                Console.WriteLine("Overall grade: F\n");
+
+                Console.WriteLine("*Notes: \nUnfortunately, you have not met the requirements for passing the course. \nPlease speak with me to discuss your options moving forward.\n");
+                Return();
+            }
 
         }
 
